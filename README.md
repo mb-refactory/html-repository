@@ -1,15 +1,9 @@
-## Creazione di un semplice sito web usando solo HTML
+## Repository per il tirocinio 
    
-### Pagina home:
-- index.html 
+### Cartella HTML:
+- esercizi su HTML 
 
-### Pagina in italiano: 
-- italian.html 
+### Cartella CSS: 
+- esercizi su CSS 
 
-### Pagine secondarie:
-- history.html 
-- markup.html 
-- delivery.html 
-
-Tutti i file multimediali sono all'interno della cartella "media"
 
