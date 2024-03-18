@@ -1,47 +1,83 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" style="font-family:verdana">
 
 <head>
   <meta charset="utf-8">
-  <title>Pictures</title>
+  <title>HTML-Home</title>
+  <link rel="icon" href="favicon.ico" />
+
 </head>
 
 <body>
-  <h1>Images and Tables in html</h1>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="markup.html">Markup</a></li>
+      <li><a href="delivery.html">Delivery</a></li>
+    </ul>
+
+    <form>
+      <input type="search" name="q" placeholder="Search query" />
+      <input type="submit" value="Search" />
+    </form>
+  </nav>
+
+  <h1>HTML</h1>
+  <hr>
 
   <main>
-    <figure>
-      <img
-        src="https://images.unsplash.com/photo-1475359524104-d101d02a042b?q=80&w=2794&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="A picture of some trees from above" height="960" width="1800" title="trees">
-      <figcaption>
-        Figure caption, Image by ...
-      </figcaption>
-    </figure>
+    <article>
+      <p>
+        <strong>HyperText Markup Language</strong> or HTML is the standard markup language for documents designed to be
+        displayed in a
+        web browser. It defines the content and structure of web content. It is often assisted by technologies such as
+        <em>Cascading Style Sheets</em> (CSS) and scripting languages such as <em>JavaScript</em>.
+      </p>
+      <figure>
+        <img src="HTML5_logo_and_wordmark.svg" alt="HTML 5 logo" width="120" height="120">
+        <figcaption>The official logo of the latest version, HTML5</figcaption>
+      </figure>
+      <p>
+        Web browsers receive HTML documents from a web server or from local storage and render the documents into
+        multimedia web pages. HTML describes the <strong>structure</strong> of a web page semantically and originally
+        included cues for
+        its appearance.
+      </p>
+      <p>
+        HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as
+        interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents
+        by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes, and other items.
+        HTML elements are delineated by <strong>tags</strong>, written using angle brackets. Tags such as
+        <code>&lt;img&gt;</code> and
+        <code>&lt;input&gt;</code>
+        directly introduce content into the page. Other tags such as <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code>
+        surround and provide
+        information about document text and may include sub-element tags. Browsers do not display the HTML tags but use
+        them to interpret the content of the page.
+      </p>
+      <p>
+        HTML can embed programs written in a scripting language such as <em>JavaScript</em>, which affects the behavior
+        and
+        content
+        of web pages. The inclusion of CSS defines the look and layout of content. The <em>World Wide Web
+          Consortium</em> (W3C),
+        former maintainer of the HTML and current maintainer of the CSS standards, has encouraged the use of CSS over
+        explicit presentational HTML since 1997. A form of HTML, known as HTML5, is used to display video and audio,
+        primarily using the <code>&lt;canvas&gt;</code> element, together with JavaScript.
+      </p>
+    </article>
 
-    <hr>
-    <table>
-      <tr>
-        <th>Row 1, Col 1</th>
-        <td>Row 1, Col 2</td>
-        <td>Row 1, Col 3</td>
-        <td>Row 1, Col 4</td>
-      </tr>
-      <tr>
-        <th>Row 2, Col 1</th>
-        <td>Row 2, Col 2</td>
-        <td>Row 2, Col 3</td>
-        <td>Row 2, Col 4</td>
-      </tr>
-      <tr>
-        <th>Row 3, Col 1</th>
-        <td>Row 3, Col 2</td>
-        <td>Row 3, Col 3</td>
-        <td>Row 3, Col 4</td>
-      </tr>
-    </table>
+    <aside>
+      <a href="italian.html">Switch language to <strong>Italian</strong></a></li>
+    </aside>
   </main>
 
+  <hr>
+  <footer>
+    <em>This is an HTML only webpage</em>
+  </footer>
 </body>
 
 </html>

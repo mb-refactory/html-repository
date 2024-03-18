@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US" style="font-family:verdana">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML-Delivery</title>
+    <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="markup.html">Markup</a></li>
+            <li><a href="delivery.html">Delivery</a></li>
+        </ul>
+
+        <form>
+            <input type="search" name="q" placeholder="Search query" />
+            <input type="submit" value="Search" />
+        </form>
+    </nav>
+
+    <h1>Delivery</h1>
+    <hr>
+
+    <main>
+        <article>
+            <p>
+                HTML documents can be delivered by the same means as any other computer file. However, they are most
+                often delivered either by HTTP from a web server or by email.
+            </p>
+            <h2>HTTP</h2>
+            <p>
+                The World Wide Web is composed primarily of HTML documents transmitted from web servers to web browsers
+                using the <em>Hypertext Transfer Protocol</em> (HTTP). However, HTTP is used to serve images, sound, and
+                other
+                content, in addition to HTML. To allow the web browser to know how to handle each document it receives,
+                other information is transmitted along with the document. This meta data usually includes the MIME type
+                (e.g., <code>/html</code> or <code>application/xhtml+xml</code>) and the character encoding.
+            </p>
+            <p>
+                In modern browsers, the MIME type that is sent with the HTML document may affect how the document is
+                initially interpreted. A document sent with the XHTML MIME type is expected to be well-formed XML;
+                syntax errors may cause the browser to fail to render it. The same document sent with the HTML MIME type
+                might be displayed successfully since some browsers are more lenient with HTML.
+            </p>
+            <h2>HTML e-mail</h2>
+            <p>
+                Most graphical email clients allow the use of a subset of HTML (often ill-defined) to provide formatting
+                and semantic markup not available with plain text. This may include typographic information like colored
+                headings, emphasized and quoted text, inline images and diagrams. Many such clients include both a GUI
+                editor for composing HTML e-mail messages and a rendering engine for displaying them. Use of HTML in
+                e-mail is criticized by some because of compatibility issues, because it can help disguise phishing
+                attacks, because of accessibility issues for blind or visually impaired people, because it can confuse
+                spam filters and because the message size is larger than plain text.
+            </p>
+            <h2>Naming conventions</h2>
+            <p>
+                The most common filename extension for files containing HTML is .html. A common abbreviation of this is
+                .htm, which originated because some early operating systems and file systems, such as DOS and the
+                limitations imposed by FAT data structure, limited file extensions to three letters.
+            </p>
+
+            <figure>
+                <img src="Simple HTML.svg" alt="Illustration of a simple HTML document" width="257" height="300">
+                <figcaption>A graphical despiction of a very simple html document</figcaption>
+            </figure>
+        </article>
+    </main>
+
+    <hr>
+    <footer>
+        <em>This is an HTML only webpage</em>
+    </footer>
+</body>
+
+</html>
