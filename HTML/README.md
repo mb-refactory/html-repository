@@ -1,12 +1,17 @@
-## Creazione di un semplice sito web usando solo HTML
-   
-### Pagina home:
+# Creazione di un semplice sito web usando solo HTML
+## Guida di utilizzo:
+- da terminale: `git clone https://github.com/mb-refactory/mb-tirocinio-refactory-repository.git`
+- spostarsi nella cartella HTML
+- aprire il file index.html da un qualsiasi browser
+
+## CONTENUTI CARTELLA HTML:
+#### Pagina home:
 - index.html 
 
-### Pagina in italiano: 
+#### Pagina in italiano: 
 - italian.html 
 
-### Pagine secondarie:
+#### Pagine secondarie:
 - history.html 
 - markup.html 
 - delivery.html 
