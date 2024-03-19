@@ -1,12 +1,41 @@
-h1 {
-    color: rgb(22, 81, 169);
-    font-family: Verdana,sans-serif;
-    background-color: rgb(255, 204, 0);
-    border: 2px solid black;
+p,
+li {
+    color: rgb(0, 136, 255);
+}
+
+.special {
+    color: coral;
+}
+
+p span {
+    color: rgb(17, 170, 173);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:link {
+    color: pink;
+}
+
+a:visited {
+    color: forestgreen;
+}
+
+body h1 + p .special {
+    color: rgb(255, 255, 0);
+    background-color: black;
+    padding: 5px;
+  }
+
+  .outer {
+    border: 5px solid black;
   }
   
-  p {
-    color: rgb(255, 157, 0);
-    font-family: Verdana, sans-serif;
-    
+  .box {
+    padding: 10px;
+    width: calc(90% - 30px);
+    background-color: rebeccapurple;
+    color: white;
   }
