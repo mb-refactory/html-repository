@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US" style="font-family:verdana">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML-Markup</title>
+    <link rel="icon" href="media/favicon.ico" />
+    <link rel="stylesheet" href="styles.css ">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="markup.html">Markup</a></li>
+            <li><a href="delivery.html">Delivery</a></li>
+        </ul>
+
+        <form>
+            <input type="search" name="q" placeholder="Search query" />
+            <input type="submit" value="Search" />
+        </form>
+    </nav>
+
+    <div class="content">
+
+        <header>
+            <h1>Markup</h1>
+        </header>
+
+        <main>
+            <article>
+                <p>
+                    HTML markup consists of several key components, including those called <strong>tags</strong> (and
+                    their
+                    attributes),
+                    character-based data types, character references and entity references. HTML tags most commonly come
+                    in
+                    pairs like
+                    <code>&lt;h1&gt</code>; and <code>&lt;/h1&gt;</code>, although some represent empty elements and so
+                    are
+                    unpaired, for example <code>&lt;img&gt;</code>. The first tag
+                    in such a pair is the start tag, and the second is the end tag (they are also called opening tags
+                    and
+                    closing tags).
+                </p>
+                <p>
+                    Another important component is the HTML <em>document type declaration</em>, which triggers standards
+                    mode rendering.
+                    The following is an example of the classic "Hello, World!" program:
+                </p>
+                <code>
+                    &lt;!DOCTYPE html&gt;<br>
+                    &ensp;&lt;html&gt;<br>
+                    &ensp;&ensp;&lt;head&gt;<br>
+                    &ensp;&ensp;&ensp;&lt;title&gt;This is a title&lt;/title&gt;<br>
+                    &ensp;&ensp;&lt;/head&gt;<br>
+                    &ensp;&ensp;&lt;body&gt;<br>
+                    &ensp;&ensp;&ensp;&lt;div&gt;<br>
+                    &ensp;&ensp;&ensp;&ensp;&lt;p&gt;Hello world!&lt;/p&gt;<br>
+                    &ensp;&ensp;&ensp;&lt;div&gt;<br>
+                    &ensp;&lt;/body&gt;<br>
+                    &lt;/html&gt;<br>
+                </code>
+                <p>
+                    The text between <code>&lt;html&gt;</code> and <code>&lt;/html&gt;</code> describes the web page,
+                    and
+                    the text between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code> is the visible page
+                    content.
+                    The markup text <code>&lt;title&gt;</code>This is a title<code>&lt;/title&gt;</code> defines the
+                    browser
+                    page title shown on browser tabs and window titles and the tag
+                    <code>&lt;div&gt;</code> defines a division of the page used for easy styling. <br>
+                    Between <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> a
+                    <code>&lt;meta&gt;</code> element can be used to define webpage metadata.
+
+                    The Document Type Declaration
+                    <code>&lt;!DOCTYPE html&gt;</code> is for HTML5. If a declaration is not included, various browsers
+                    will
+                    revert to "quirks
+                    mode" for rendering.
+                </p>
+                <p>
+                    <strong>Here is a Basic Introduction to HTML Programming video:</strong>
+                </p>
+
+                <video src="media/Basic_Introduction_to_HTML.1080p.webm" controls width="800" height="450">
+                    <!--Se il video non è supportato dal browser, viene mostrato il link al video-->
+                    <p>Your browser doesn't support HTML5 video. Here is a <a
+                            href="https://upload.wikimedia.org/wikipedia/commons/5/58/Basic_Introduction_to_HTML.webm">link
+                            to the video</a> instead.</p>
+                </video>
+            </article>
+        </main>
+
+    </div>
+
+    <footer>
+        <em>This is an HTML + CSS webpage</em>
+    </footer>
+</body>
+
+</html>
