@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+    height: 100%;
+}
+
 * {
     font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
@@ -7,8 +11,26 @@
     padding: 0px;
 }
 
+
+body {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background: rgb(2, 0, 33);
+    background: linear-gradient(128deg, rgba(2, 0, 33, 1) 0%, rgba(46, 4, 50, 1) 51%, rgba(6, 56, 66, 1) 100%);
+}
+
+
 header {
-    background-color:darkslateblue;
+    order: 0;
+    flex: 0.5;
+    background: rgb(2, 0, 33);
+    background: linear-gradient(90deg, rgba(2, 0, 33, 1) 0%, rgba(76, 9, 121, 1) 100%, rgba(6, 56, 66, 1) 100%);
+}
+
+main {
+    order: 1;
+    flex: 10;
 }
 
 li,
@@ -19,6 +41,8 @@ button {
     font-size: 1em;
     color: white;
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
 }
 
 header {
@@ -29,21 +53,26 @@ header {
 }
 
 .logo {
-    width: 4em; 
+    width: 10em;
     margin-right: auto;
 }
 
-.nav-links li{
+.nav-links{
+    padding-right: 2em;
+}
+
+.nav-links li {
     display: inline-block;
-    padding: 0em 2em;
+    padding: 0em 1em;
 }
 
 .nav-links li a:hover {
-    color: cadetblue;
+    color: rgb(205, 191, 219);
+    font-size: 1.1em;
 }
 
 .search-button {
-    padding: 1em 2,5em;
+    padding: 1em 2, 5em;
     width: 5em;
     height: 3em;
     margin-left: auto;
@@ -53,9 +82,14 @@ header {
     background-color: burlywood;
 }
 
+.search-button:hover {
+    width: 6em;
+    height: 3.5em;
+}
+
 .unsubscribe-button,
 .subscribe-button {
-    padding: 1em 2,5em;
+    padding: 1em 2, 5em;
     width: 10em;
     height: 3em;
     margin-left: auto;
@@ -65,4 +99,23 @@ header {
     background-color: burlywood;
 }
 
+.home-content {
+    padding: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 5em;}
+
+.search-page-content {
+    padding: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
