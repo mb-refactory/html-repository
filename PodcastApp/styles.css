@@ -11,7 +11,6 @@ html {
     padding: 0px;
 }
 
-
 body {
     background-repeat: no-repeat;
     display: flex;
@@ -20,7 +19,6 @@ body {
     background: rgb(2, 0, 33);
     background: linear-gradient(128deg, rgba(2, 0, 33, 1) 0%, rgba(46, 4, 50, 1) 51%, rgba(6, 56, 66, 1) 100%);
 }
-
 
 header {
     order: 0;
@@ -41,7 +39,6 @@ footer {
     text-align: center;
     padding-top: 25em;
     padding-bottom: 10em;
-
     order: 2;
 }
 
@@ -55,7 +52,6 @@ button {
     text-decoration: none;
     transition: all 0.2s ease-in-out;
     list-style-type: none;
-
 }
 
 .logo {
@@ -111,8 +107,6 @@ button {
     background-color: rgba(255, 99, 71, 0.813);
     width: 13em;
     border-radius: 2em;
-
-
 }
 
 .unsubscribe-button:hover,
@@ -120,9 +114,8 @@ button {
     width: 13em;
     height: 4.0em;
     font-weight: bold;
-
-
 }
+
 
 /* PODCAST GRID */
 .podcast-grid {
@@ -154,12 +147,6 @@ button {
     padding-top: 0.5em;
 }
 
-/* Sistema l'allineamento dell'ultima riga */
-/*.podcast-grid::after {
-    content: "";
-    flex:auto;
-}
-*/
 
 /* HOME PAGE */
 .home-content {
@@ -174,6 +161,7 @@ button {
     font-family: "Montserrat", sans-serif;
     font-size: 5em;
 }
+
 
 /* SEARCH PAGE */
 .search-page-content {
@@ -230,6 +218,7 @@ input[type=search]:focus {
     font-weight: bold;
 }
 
+
 /* YOUR PODCASTS PAGE */
 .your-podcast-content {
     padding-top: 3em;
@@ -238,6 +227,7 @@ input[type=search]:focus {
 .your-podcast-content h1 {
     text-align: center;
 }
+
 
 /* SUGGESTED PAGE */
 .suggested-content {
@@ -252,6 +242,7 @@ input[type=search]:focus {
     justify-content: center;
     align-items: flex-end;
 }
+
 
 /* PODCAST and EPISODE DETAILS PAGES*/
 .details-content h1 {
@@ -273,7 +264,6 @@ input[type=search]:focus {
 
 .details-content img {
     transition: all 1s ease-in-out;
-
     width: 20em;
     height: 20em;
     border-radius: 2em;
@@ -304,7 +294,6 @@ input[type=search]:focus {
 .episode-item:hover {
     padding: 2.5em;
     background: linear-gradient(128deg, rgba(6, 56, 66, 0.539) 0%, rgba(84, 68, 100, 0.738) 100%);
-
 }
 
 .episode-item p {
@@ -337,8 +326,8 @@ input[type=search]:focus {
     padding-right: 3em;
 }
 
-/* PLAYER */
 
+/* PLAYER */
 .player button {
     transition: all 0.2s ease-in-out;
     text-transform: uppercase;
@@ -349,7 +338,6 @@ input[type=search]:focus {
     border: none;
     border-radius: 1.5em;
     cursor: pointer;
-
 }
 
 .play {
@@ -383,3 +371,22 @@ input[type=search]:focus {
     vertical-align: bottom;
 }
 
+
+/* ANIMATIONS */
+.typed-out {
+    overflow: hidden;
+    border-right: .15em solid white;
+    white-space: nowrap;
+    animation: typing 2s steps(20, end) forwards;
+    width: 0;
+}
+
+@keyframes typing {
+    from {
+        width: 0em
+    }
+
+    to {
+        width: 15em
+    }
+}
