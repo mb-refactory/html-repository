@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 html {
-    height: 100%;
+    min-height: 100%;
 }
 
 * {
@@ -13,6 +13,7 @@ html {
 
 
 body {
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     color: white;
@@ -23,14 +24,25 @@ body {
 
 header {
     order: 0;
-    flex: 0.5;
     background: rgb(2, 0, 33);
     background: linear-gradient(90deg, rgba(2, 0, 33, 1) 0%, rgba(76, 9, 121, 1) 100%, rgba(6, 56, 66, 1) 100%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 3em 10%;
 }
 
 main {
     order: 1;
-    flex: 10;
+}
+
+footer {
+    font-size: small;
+    text-align: center;
+    padding-top: 25em;
+    padding-bottom: 10em;
+
+    order: 2;
 }
 
 li,
@@ -45,19 +57,12 @@ button {
 
 }
 
-header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 3em 10%;
-}
-
 .logo {
     width: 10em;
     margin-right: auto;
 }
 
-.nav-links{
+.nav-links {
     padding-right: 2em;
 }
 
@@ -71,7 +76,7 @@ header {
     font-size: 1.1em;
 }
 
-.search-button {
+.search-button-nav {
     padding: 1em 2, 5em;
     width: 5em;
     height: 3em;
@@ -82,7 +87,7 @@ header {
     background-color: burlywood;
 }
 
-.search-button:hover {
+.search-button-nav:hover {
     width: 6em;
     height: 3.5em;
 }
@@ -99,6 +104,44 @@ header {
     background-color: burlywood;
 }
 
+/* PODCAST GRID */
+.podcast-grid {
+    height: max-content;
+    padding-top: 3em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.podcast-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border-radius: 1em;
+    align-items: center;
+}
+
+.podcast-item img {
+    width: 15em;
+    height: 15em;
+    border-radius: 1em;
+}
+
+.podcast-item p {
+    font-weight: bold;
+    padding-top: 0.5em;
+}
+
+/* Sistema l'allineamento dell'ultima riga */
+/*.podcast-grid::after {
+    content: "";
+    flex:auto;
+}
+*/
+
+/* HOME PAGE */
 .home-content {
     padding: 10em;
     display: flex;
@@ -109,8 +152,10 @@ header {
 
 .home-content h1 {
     font-family: "Montserrat", sans-serif;
-    font-size: 5em;}
+    font-size: 5em;
+}
 
+/* SEARCH PAGE */
 .search-page-content {
     padding: 10em;
     display: flex;
@@ -119,3 +164,70 @@ header {
     align-items: center;
 }
 
+.search-form input[type=search] {
+    border: none;
+    color: white;
+    margin-top: 2em;
+    padding-bottom: .5em;
+    padding-top: .6em;
+    background-color: transparent;
+    border-bottom: .1em solid white;
+    border-top: .1em solid white;
+    border-left: .1em solid white;
+    border-top-left-radius: 5em 5em;
+    border-bottom-left-radius: 5em 5em;
+    text-align: center;
+    font-size: 2em;
+    font-family: Work Sans, sans-serif;
+    overflow: hidden;
+    caret-color: white;
+    width: 20em;
+}
+
+input[type=search]:focus {
+    outline: none;
+    text-align: center;
+}
+
+.search-button {
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    bottom: 0.5em;
+    left: -.3em;
+    width: 10em;
+    height: 5em;
+    border: none;
+    border-radius: 5em;
+    border-top-left-radius: 0 0;
+    border-bottom-left-radius: 0 0;
+    cursor: pointer;
+    color: rgb(58, 42, 75);
+    font-size: 1em;
+    background-color: rgba(222, 184, 135, 0.789);
+}
+
+.search-button:hover {
+    font-weight: bold;
+}
+
+/* YOUR PODCASTS PAGE */
+.your-podcast-content {
+    padding-top: 3em;
+}
+
+.your-podcast-content h1 {
+    text-align: center;
+}
+
+/* SUGGESTED PAGE */
+.suggested-content {
+    padding-top: 3em;
+}
+
+.suggested-content h1 {
+    text-align: center;
+}
+.suggested-content .podcast-grid {
+    justify-content: center;
+    align-items: flex-end;
+}
