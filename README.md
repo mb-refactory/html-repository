@@ -7,5 +7,5 @@
 - esercizi su CSS 
 
 ### Cartella PodcastApp:
-- prima versione statica pagine App
+- prima versione (solo HTML e CSS) della WebApp per l'ascolto di Podcast
 
