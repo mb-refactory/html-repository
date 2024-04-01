@@ -140,12 +140,13 @@ button {
     transition: all 1s ease-in-out;
     width: 15em;
     height: 15em;
+    border-radius: 1em;
+
 }
 
 .podcast-item img:hover {
     width: 16em;
     height: 16em;
-    border-radius: 1em;
 }
 
 
