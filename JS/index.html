@@ -5,12 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin-top: 20rem;
+            border: none;
+            background-color: black;
+            color: white;
+            border-radius: 2em;
+            font-size: 2em;
+            padding: 1em;
+
+        }
+    </style>
 </head>
 
 <body>
-    <section>
-    </section>
+
+    <button>
+        Click me to change the background color
+    </button>
+
+    <script>
+        const btn = document.querySelector("button");
+
+        function random(number) {
+            return Math.floor(Math.random() * (number + 1));
+        }
+
+        btn.addEventListener("click", () => {
+            const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+            document.body.style.backgroundColor = rndCol;
+        });
+    </script>
+
 </body>
 
 </html>
