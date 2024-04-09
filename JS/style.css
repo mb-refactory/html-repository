@@ -1,0 +1,65 @@
+h1 {
+  font-family: helvetica, arial, sans-serif;
+  text-align: center;
+  color: rgb(241, 241, 241);
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  width: 640px;
+  margin: 0 auto;
+  background-color: rgb(35, 35, 35);
+}
+
+.full-img {
+  position: relative;
+  display: block;
+  width: 640px;
+  height: 480px;
+
+}
+
+.displayed-img {
+  width: 640px;
+  height: 480px;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 480px;
+  background-color: rgba(0,0,0,0);
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+
+}
+
+button {
+  border: none;
+  background: rgb(23, 23, 23);
+  color: rgb(232, 232, 232);
+  font-size: larger;
+  position: relative;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  top: 7em;
+  left: 14em;
+  padding: 1em;
+}
+
+button:hover{
+  background: rgb(78, 78, 78);
+  transition: 0.5s;
+}
+
+.thumb-bar img {
+  display: block;
+  width: 20%;
+  float: left;
+  cursor: pointer;
+}
