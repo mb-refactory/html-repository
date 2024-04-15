@@ -14,3 +14,6 @@
 
 ### Cartella Bootstrap:
 - versione statica accessibile della WebApp realizzata con Bootstrap 
+
+### Cartella LabelPrinter:
+- sito web per stampare etichette con la stampante Brother QL-800 direttamente da browser
