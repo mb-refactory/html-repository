@@ -7,7 +7,7 @@
 - esercizi su CSS 
 
 ### Cartella JS
-- esercizi su JavaScript
+- PodcastApp dinamica con JavaScript
 
 ### Cartella PodcastApp:
 - prima versione (solo HTML e CSS) della WebApp per l'ascolto di Podcast
