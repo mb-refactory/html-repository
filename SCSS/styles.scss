@@ -1,5 +1,16 @@
 $my-font: futura, sans-serif;
 $white: #fff;
+$blue: #224a85;
+
+$my-global-variable: "I'm global";
+
+div {
+    $my-local-variables: "I'm local";
+}
+
+h1 {
+    color: $blue;
+}
 
 p {
     font-family: $my-font;
@@ -25,3 +36,20 @@ button {
         background-color: rgb(68, 101, 84);
     }
 }
+
+nav {
+    background-color:#333;
+    padding:1em;
+    ul {
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    li {
+      display:inline-block;
+      color: $white;
+      padding-left: 2em;
+    }
+  }
+
+  
