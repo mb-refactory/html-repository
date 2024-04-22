@@ -1,5 +1,8 @@
-const apiKey = 'yourApiKey';
-const apiSecret = 'youtApiSecret';
+ const apiKey = 'CEJPDPAVDYYSFDAHNVPK';
+ const apiSecret = '';
+// const apiKey = localStorage.getItem('apiKey');
+// const apiSecret = localStorage.getItem('apiSecret');
+
 const userSystem = 'PodcastApp';
 
 const currentDate = Math.floor(Date.now() / 1000);
@@ -29,9 +32,8 @@ async function podcastIndexAPI(fullURL) {
     })
         .then(response => response.json())
 
-
-
         .catch(error => {
+            console.error('CHECK YOUR API CREDENTIALS');
             console.error('Error:', error);
         });
 }
@@ -50,7 +52,7 @@ async function podcastIndexEpisodesByIdAPI(podcastID, maxResults) {
 }
 
 async function podcastIndexTrendingAPI(maxResults, categories) {
-    console.log('Trending API: ');
+    console.log('Trending API:  ');
     let catList = categories.join(',');
     let fullRequestURL = `https://api.podcastindex.org/api/1.0/podcasts/trending?pretty&max=${maxResults}&lang=en&cat=${catList}`;
     return podcastIndexAPI(fullRequestURL);

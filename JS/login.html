@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>PodcastApp-Home</title>
+    <title>PodcastApp-Login</title>
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
@@ -15,31 +15,30 @@
 
 <body class="bg-body-secondary">
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container justify-content-center">
-                <a class="navbar-brand" href="index.html"><img src="media/logo.svg" alt="logo" width="150em"></a>
-            </div>
-        </nav>
-    </header>
-
     <main>
         <div class="container text-center py-5 mt-5">
-
-            <div class="row mt-5">
-                <div class="col-xl-4 col-lg-12 mb-3">
-                    <a class="btn btn-dark btn-lg fs-1 p-5 rounded-4 d-flex flex-fill justify-content-center"
-                        href="your-podcasts.html" role="button">Your Podcasts</a>
-                </div>
-                <div class="col-xl-4 col-lg-12 mb-3">
-                    <a class="btn btn-dark btn-lg fs-1 p-5 rounded-4 d-flex flex-fill justify-content-center"
-                        href="suggested.html" role="button">Suggested</a>
-                </div>
-                <div class="col-xl-4 col-lg-12 mb-3">
-                    <a class="btn btn-warning btn-lg fs-1 p-5 rounded-4 d-flex flex-fill justify-content-center"
-                        href="search.html" role="button">Search</a>
+            <div class="row mb-3 mt-5">
+                <h1>Login with your PodcastIndex API credentials </h1>
+            </div>
+            <div class="row">
+                <div class="col-6 m-auto">
+                    <form>
+                        <div class="mb-3">
+                            <label for="APIKEY" class="form-label">API Key</label>
+                            <input type="text" class="form-control api-key" id="APIKEY">
+                        </div>
+                        <div class="mb-3">
+                            <label for="APISECRET" class="form-label">API Secret</label>
+                            <input type="password" class="form-control api-secret" id="APISECRET">
+                        </div>
+                        <div class="form-text mb-3">Don't have one? Get yout free API key at <a
+                                href="https://api.podcastindex.org/signup">PodcastIndexApi.org</a></div>
+                    </form>
+                    <button type="submit" class="btn btn-warning">Submit</button>
                 </div>
             </div>
+
+
     </main>
 
     <footer class="footer py-3 bg-dark fixed-bottom text-center">
@@ -51,7 +50,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="JS/initialize.js"></script>
+    <script src="JS/login.js"></script>
 
 </body>
 

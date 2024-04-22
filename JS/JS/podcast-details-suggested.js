@@ -1,47 +1,45 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const podcastDetails = getPodcastDetails();
-    console.log('Cover URL:' + podcastDetails.artwork);
-    const cover = document.querySelector('.img-fluid');
-    cover.src = podcastDetails.artwork;
-    const title = document.querySelector('h1');
-    title.textContent = podcastDetails.title;
-    const description = document.querySelector('p');
-    description.textContent = podcastDetails.description.replace(/<[^>]*>/g, '');
-});
+
+initializePodcastDetails();
+
+const subscribeBtn = document.querySelector('.subscribe-btn');
+let podcastID = getPodcastDetailsFromSessionStorage().id;
+let subscribedPodcastsIDs = getSubscribedPodcastsIDs();
 
 
-function addSubscribedPodcast(podcastId) {
-    let subscribedPodcasts = getSubscribedPodcastsIDs();
+function addPodcastToSubscriptionList(podcastId) {
+    let subscribedPodcasts = getSubscribedPodcasts();
     if (!subscribedPodcasts.includes(podcastId)) {
-        subscribedPodcasts.push(podcastId);
+        const currentDate = new Date();
+        const options = { month: 'long', day: 'numeric', year: 'numeric' };
+        const formattedDate = currentDate.toLocaleDateString('en-US', options);
+        subscribedPodcasts.push({ id: podcastId, subscriptionDate: formattedDate });
         localStorage.setItem('subscribedPodcasts', JSON.stringify(subscribedPodcasts));
         console.log('Podcast with ID: ' + podcastId + ' added to the subscribed list');
+        console.log('Subscribed on: ' + formattedDate);
     }
 }
 
-function checkSubscription(){
-    let podcastID = getPodcastDetails().id;
-    let subscribedPodcasts = getSubscribedPodcastsIDs();
-    if (subscribedPodcasts.includes(podcastID)) {
+function checkSubscription() {
+    if (subscribedPodcastsIDs.includes(podcastID)) {
         subscribeBtn.classList.replace('btn-primary', 'btn-success');
-        subscribeBtn.textContent = 'Subscribed';
+        subscribeBtn.textContent = 'Already Subscribed: view episodes';
+        subscribeBtn.addEventListener('click', () => {
+            location.href = 'podcast-details-subscribed.html';
+        });
     }
 }
-
-const subscribeBtn = document.querySelector("button");
 
 subscribeBtn.addEventListener('click', () => {
-    let podcastID = getPodcastDetails().id;
-    let subscribedPodcasts = getSubscribedPodcastsIDs();
-    if (!subscribedPodcasts.includes(podcastID)) {
-        // Aggiungi il podcast alla lista iscrizioni
-        addSubscribedPodcast(podcastID);
+    if (!subscribedPodcastsIDs.includes(podcastID)) {
+        addPodcastToSubscriptionList(podcastID);
+        // alert('You successfully subscribed to this Podcast!');
+        // location.href = 'podcast-details-subscribed.html';
         subscribeBtn.classList.replace('btn-primary', 'btn-success');
-        subscribeBtn.textContent = 'You subscribed to the podcast!';
-    } else {
-        alert("You are already subscribed to this podcast");
+        subscribeBtn.textContent = 'You subscribed to this podcast!';
+        setTimeout(() => {
+            location.href = 'podcast-details-subscribed.html';
+        }, 2000);
     }
-}
-);
+});
 
 checkSubscription();

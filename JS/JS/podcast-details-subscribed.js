@@ -1,30 +1,30 @@
 
-document.addEventListener('DOMContentLoaded', function () {
-    const podcastDetails = JSON.parse(sessionStorage.getItem('selectedPodcast'));
-    console.log('Cover URL:' + podcastDetails.artwork);
-    const cover = document.querySelector('.img-fluid');
-    cover.src = podcastDetails.artwork;
-    const title = document.querySelector('h1');
-    title.textContent = podcastDetails.title;
-    const description = document.querySelector('p');
-    description.textContent = podcastDetails.description.replace(/<[^>]*>/g, '');;
-    const podcastID = podcastDetails.id;
-    console.log('Gathering information on podcast episodes with ID: ' + podcastID);
-    podcastIndexEpisodesByIdAPI(podcastID, 10)
+initializePodcastDetails();
+
+let podcastID = getPodcastDetailsFromSessionStorage().id;
+let subscribedPodcastsIDs = getSubscribedPodcastsIDs();
+let subscribedOn = document.querySelector(".subscription-date");
+let subscriptionDate = getSubscriptionDateById(podcastID);
+subscribedOn.textContent = subscriptionDate;
+const unsubscribeBtn = document.querySelector(".unsubscribe-btn");
+
+console.log('Gathering information on podcast episodes with ID: ' + podcastID);
+podcastIndexEpisodesByIdAPI(podcastID, 20)
     .then(data => {
         console.log(data);
         showEpisodes(data);
     });
-});
 
 function showEpisodes(data) {
     const details = document.querySelector('.details');
     const subscribtionDate = document.querySelector('.subscription-date');
-
+    // Ordina cronologicamente
+    data.items.sort((a, b) => a.datePublished - b.datePublished);
     data.items.forEach(episode => {
 
+        console.log(episode.datePublished);
         const card = document.createElement('div');
-        card.className = 'card mb-3 mt-3';
+        card.className = 'card mb-3 mt-3 fade-in';
 
         const row = document.createElement('div');
         row.className = 'row';
@@ -76,38 +76,22 @@ function showEpisodes(data) {
 }
 
 function removeSubscribedPodcast(podcastId) {
-    let subscribedPodcasts = getSubscribedPodcastsIDs();
-    const index = subscribedPodcasts.indexOf(podcastId);
+    let subscribedPodcasts = getSubscribedPodcasts();
+    const index = subscribedPodcasts.findIndex(podcast => podcast.id === podcastId);
     subscribedPodcasts.splice(index, 1);
     localStorage.setItem('subscribedPodcasts', JSON.stringify(subscribedPodcasts));
 }
 
-function checkSubscription(){
-    let podcastID = getPodcastDetails().id;
-    let subscribedPodcasts = getSubscribedPodcastsIDs();
-    if (!subscribedPodcasts.includes(podcastID)) {
-        unsubscribeBtn.classList.replace('btn-danger', 'btn-warning');
-        unsubscribeBtn.textContent = 'unsubscribed';
-    }
-}
-
-const unsubscribeBtn = document.querySelector(".unsubscribe-btn");
-
 unsubscribeBtn.addEventListener('click', () => {
-    let podcastID = getPodcastDetails().id;
-    let subscribedPodcasts = getSubscribedPodcastsIDs();
-    if (subscribedPodcasts.includes(podcastID)) {
-        // Aggiungi il podcast alla lista iscrizioni
+    if (subscribedPodcastsIDs.includes(podcastID)) {
         removeSubscribedPodcast(podcastID);
-        unsubscribeBtn.classList.replace('btn-danger', 'btn-warning');
-        unsubscribeBtn.textContent = 'You successfully unsubscribed from this podcast';
-    } else {
-        alert("You have already unsubscribed from this podcast");
+        alert('You successfully unsubscribed from this podcast');
+        location.href = ('your-podcasts.html');
     }
 }
 );
 
-checkSubscription();
+
 
 
 
