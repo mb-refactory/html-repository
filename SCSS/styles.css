@@ -1,8 +1,24 @@
-h1 {
+p {
+  font-family: futura, sans-serif;
+}
+
+a {
   color: blue;
 }
-h1:hover {
+a:hover {
   color: red;
+}
+
+button {
+  background-color: rgb(98, 183, 28);
+  border-radius: 2em;
+  width: 10em;
+  height: 5em;
+  color: #fff;
+  border: none;
+}
+button:hover {
+  background-color: rgb(68, 101, 84);
 }
 
 /*# sourceMappingURL=styles.css.map */

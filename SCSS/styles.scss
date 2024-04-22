@@ -1,6 +1,27 @@
-h1 {
+$my-font: futura, sans-serif;
+$white: #fff;
+
+p {
+    font-family: $my-font;
+}
+
+a {
     color: blue;
+
     &:hover {
         color: red;
+    }
+}
+
+button {
+    background-color: rgb(98, 183, 28);
+    border-radius: 2em;
+    width: 10em;
+    height: 5em;
+    color: $white;
+    border: none;
+
+    &:hover {
+        background-color: rgb(68, 101, 84);
     }
 }
