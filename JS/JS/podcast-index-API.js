@@ -1,7 +1,3 @@
- const apiKey = 'CEJPDPAVDYYSFDAHNVPK';
- const apiSecret = '';
-// const apiKey = localStorage.getItem('apiKey');
-// const apiSecret = localStorage.getItem('apiSecret');
 
 const userSystem = 'PodcastApp';
 

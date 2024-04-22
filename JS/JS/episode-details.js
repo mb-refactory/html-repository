@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Cover URL:" + episodeDetails.feedImage);
   const cover = document.querySelector(".img-fluid");
   cover.src = episodeDetails.feedImage;
-  const title = document.querySelector("h1");
+  const title = document.querySelector(".episode-title");
   title.textContent = episodeDetails.title;
   const description = document.querySelector("p");
   description.textContent = episodeDetails.description.replace(/<[^>]*>/g, "");
   const publishDate = document.querySelector(".publish-date");
-  publishDate.textContent = episodeDetails.datePublishedPretty;
+  publishDate.textContent = episodeDetails.datePublishedPretty.split(' ').slice(0, 3).join(' ');
   const player = document.querySelector("audio");
   const listenURL = episodeDetails.enclosureUrl;
   player.src = listenURL;

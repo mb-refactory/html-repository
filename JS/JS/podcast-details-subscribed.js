@@ -22,34 +22,29 @@ function showEpisodes(data) {
     data.items.sort((a, b) => a.datePublished - b.datePublished);
     data.items.forEach(episode => {
 
-        console.log(episode.datePublished);
         const card = document.createElement('div');
-        card.className = 'card mb-3 mt-3 fade-in';
-
-        const row = document.createElement('div');
-        row.className = 'row';
-
-        const cardBodyCol = document.createElement('div');
-        cardBodyCol.className = 'col-md-9';
+        card.className = 'card mb-3 mt-3 fade-in bg-light';
 
         const cardBody = document.createElement('div');
-        cardBody.className = 'card-body';
+        cardBody.className = 'card-body text-center';
 
-        const episodeTitle = document.createElement('h4');
-        episodeTitle.className = 'card-title';
-        episodeTitle.textContent = episode.title;
+        const episodeTitleElement = document.createElement('h3');
+        let episodeTitle = episode.title;
+        episodeTitleElement.className = 'card-title mt-2 mx-5 text-center';
+        episodeTitleElement.textContent = episodeTitle;
+        card.appendChild(episodeTitleElement);
 
-        const episodeDescription = document.createElement('p');
-        episodeDescription.className = 'card-text';
-        episodeDescription.textContent = episode.description.replace(/<[^>]*>/g, '');
+        let viewDescriptionBtn = document.createElement('button');
+        viewDescriptionBtn.className = 'btn btn-outline-primary mb-2 btn-lg';
+        viewDescriptionBtn.setAttribute('type', 'button');
+        viewDescriptionBtn.textContent = 'Read description';
+        viewDescriptionBtn.style = 'width: 90%';
 
-        cardBody.appendChild(episodeTitle);
-        cardBody.appendChild(episodeDescription);
-        cardBodyCol.appendChild(cardBody);
-        row.appendChild(cardBodyCol);
-
-        const btnCol = document.createElement('div');
-        btnCol.className = 'col-md-3 mt-2 text-end';
+        let description = episode.description.replace(/<[^>]*>/g, '');
+        viewDescriptionBtn.addEventListener('click', function () {
+            showModal(episodeTitle, description);
+        });
+        cardBody.appendChild(viewDescriptionBtn);
 
         const link = document.createElement('a');
         link.href = 'episode-details.html';
@@ -57,18 +52,15 @@ function showEpisodes(data) {
             sessionStorage.setItem('selectedEpisode', JSON.stringify(episode));
         });
 
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'btn btn-primary py-2 m-3 btn-lg';
-        btn.textContent = 'View details';
+        const viewEpisodeBtn = document.createElement('button');
+        viewEpisodeBtn.type = 'button';
+        viewEpisodeBtn.className = 'btn btn-primary py-3 mx-3 mb-2 btn-lg';
+        viewEpisodeBtn.style = 'width: 90%';
+        viewEpisodeBtn.textContent = 'View episode details';
+        link.appendChild(viewEpisodeBtn);
+        cardBody.appendChild(link);
 
-        link.appendChild(btn);
-        btnCol.appendChild(link);
-        row.appendChild(btnCol);
-
-        card.appendChild(row);
-        details.appendChild(card);
-
+        card.appendChild(cardBody);
         subscribtionDate.insertAdjacentElement('afterend', card);
 
     });
