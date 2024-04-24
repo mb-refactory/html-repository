@@ -50,7 +50,8 @@ async function podcastIndexEpisodesByIdAPI(podcastID, maxResults) {
 async function podcastIndexTrendingAPI(maxResults, categories) {
     console.log('Trending API:  ');
     let catList = categories.join(',');
-    let fullRequestURL = `https://api.podcastindex.org/api/1.0/podcasts/trending?pretty&max=${maxResults}&lang=en&cat=${catList}`;
+    let language = getLanguage();
+    let fullRequestURL = `https://api.podcastindex.org/api/1.0/podcasts/trending?pretty&max=${maxResults}&lang=${language}&cat=${catList}`;
     return podcastIndexAPI(fullRequestURL);
 }
 

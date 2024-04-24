@@ -1,23 +1,26 @@
 
 initializePodcastDetails();
 
-let podcastID = getPodcastDetailsFromSessionStorage().id;
-let subscribedPodcastsIDs = getSubscribedPodcastsIDs();
-let subscribedOn = document.querySelector(".subscription-date");
-let subscriptionDate = getSubscriptionDateById(podcastID);
-subscribedOn.textContent = subscriptionDate;
+const subscriptionDateElement = document.querySelector(".subscription-date");
+const subscribedOnElement = document.querySelector(".subscribed-on");
 const unsubscribeBtn = document.querySelector(".unsubscribe-btn");
+
+const subscribedPodcastsIDs = getSubscribedPodcastsIDs();
+const podcastID = getPodcastDetailsFromSessionStorage().id;
+const subscriptionDate = getSubscriptionDateById(podcastID);
+subscriptionDateElement.textContent = formatDate(subscriptionDate);
+translate(subscribedOnElement, 'subscribedOn');
+translate(unsubscribeBtn, 'unsubscribe')
 
 console.log('Gathering information on podcast episodes with ID: ' + podcastID);
 podcastIndexEpisodesByIdAPI(podcastID, 20)
     .then(data => {
-        console.log(data);
         showEpisodes(data);
     });
 
 function showEpisodes(data) {
     const details = document.querySelector('.details');
-    const subscribtionDate = document.querySelector('.subscription-date');
+    const subscribtionDateElement = document.querySelector('.subscription-date');
     // Ordina cronologicamente
     data.items.sort((a, b) => a.datePublished - b.datePublished);
     data.items.forEach(episode => {
@@ -37,8 +40,11 @@ function showEpisodes(data) {
         let viewDescriptionBtn = document.createElement('button');
         viewDescriptionBtn.className = 'btn btn-outline-primary mb-2 btn-lg';
         viewDescriptionBtn.setAttribute('type', 'button');
-        viewDescriptionBtn.textContent = 'Read description';
+        translate(viewDescriptionBtn, 'readDescription');
         viewDescriptionBtn.style = 'width: 90%';
+        
+        let closeBtn = document.querySelector('.close');
+        translate(closeBtn, 'close');
 
         let description = episode.description.replace(/<[^>]*>/g, '');
         viewDescriptionBtn.addEventListener('click', function () {
@@ -56,12 +62,12 @@ function showEpisodes(data) {
         viewEpisodeBtn.type = 'button';
         viewEpisodeBtn.className = 'btn btn-primary py-3 mx-3 mb-2 btn-lg';
         viewEpisodeBtn.style = 'width: 90%';
-        viewEpisodeBtn.textContent = 'View episode details';
+        translate(viewEpisodeBtn, 'viewEpDetails');
         link.appendChild(viewEpisodeBtn);
         cardBody.appendChild(link);
 
         card.appendChild(cardBody);
-        subscribtionDate.insertAdjacentElement('afterend', card);
+        subscribtionDateElement.insertAdjacentElement('afterend', card);
 
     });
 
