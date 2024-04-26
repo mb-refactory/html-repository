@@ -1,0 +1,18 @@
+// Custom Variables
+$primary: green;
+$secondary: blue;
+
+
+@import '../node_modules/bootstrap/scss/_functions';
+@import '../node_modules/bootstrap/scss/_variables';
+
+
+$custom-theme-colors: (
+    "purple": #522192
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+
+// Import Bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
