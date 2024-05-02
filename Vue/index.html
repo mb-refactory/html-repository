@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js first page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            padding: 3em;
+            font-family: courier, sans-serif;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        {{greeting}}
+    </div>
+    <div class="div"></div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let app = Vue.createApp({
+            data: function () {
+                return {
+                    greeting: 'Hello, World!'
+                };
+            }
+        });
+        app.mount('#app');
+
+    </script>
+</body>
+
+</html>
