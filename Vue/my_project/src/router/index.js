@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SearchView from '../views/SearchView.vue'
 import ResultsView from '../views/ResultsView.vue'
-
+import SuggestedView from '../views/SuggestedView.vue'
+import SubscribedView from '../views/SubscribedView.vue'
 const routes = [
   {
     path: '/',
@@ -19,6 +20,16 @@ const routes = [
     name: 'ResultsView',
     component: ResultsView,
     props: true
+  },
+  {
+    path: '/suggested',
+    name: 'SuggestedView',
+    component: SuggestedView
+  },
+  {
+    path: '/subscribed',
+    name: 'subscribedView',
+    component: SubscribedView
   }
 ]
 

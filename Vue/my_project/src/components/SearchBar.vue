@@ -1,8 +1,8 @@
 <template>
     <div>
-      <form class="d-flex m-2" @submit.prevent="search">
-        <input v-model="searchTerms" class="form-control me-2 fs-1" type="search" placeholder="Search" aria-label="Search" autofocus required style="font-weight: bold;">
-        <button class="btn btn-warning" type="submit"><span class="material-symbols-outlined fs-1" style="vertical-align: bottom;">search</span></button>
+      <form class="d-flex m-2">
+        <input v-model="searchTerms"  @keydown.enter.prevent=""  class="form-control me-2 fs-1" type="search" placeholder="Search" aria-label="Search" autofocus required style="font-weight: bold;">
+        <button @click="search" class="btn btn-warning fs-1 fw-bold" type="submit">search</button>
       </form>
     </div>
 </template>

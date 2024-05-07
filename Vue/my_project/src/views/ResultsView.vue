@@ -1,14 +1,25 @@
 <template>
-    <div>
+  <div>
     <h1 class="alert alert-success m-5">Pagina dei risultati</h1>
-    <h2>Risultati della ricerca per "{{ $route.params.searchTerm }}":</h2>
-    <div class="container-grid m-4"></div>
+    <h2 class="fw-bold mx-2">Risultati della ricerca per "{{ $route.params.searchTerm }}":</h2>
+    <div class="row mx-4 my-4">
+        <div class="col-lg-6 col-md-12 fade-in" v-for="podcast in podcasts" :key="podcast.id">
+          <PodcastCard :podcastInfo="podcast" />
+        </div>
+      </div>
   </div>
 </template>
 <script>
-import { podcastIndexSearchAPI, updateGrid, showLoadingSpinner } from '../utils.js'
+import { podcastIndexSearchAPI } from '../podcastIndexAPIs.js'
+import PodcastCard from '../components/PodcastCard.vue'
 export default {
   components: {
+    PodcastCard
+  },
+  data () {
+    return {
+      podcasts: []
+    }
   },
   methods: {
     handleSearch (searchTerms) {
@@ -17,9 +28,9 @@ export default {
   },
   mounted () {
     const searchTerm = this.$route.params.searchTerm
-    showLoadingSpinner()
     podcastIndexSearchAPI(searchTerm, 12).then((data) => {
-      updateGrid(data.feeds, 'suggested')
+      this.podcasts = data.feeds
+      // updateGrid(data.feeds, 'suggested')
     })
   }
 }
